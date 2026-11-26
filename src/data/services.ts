@@ -1,3 +1,8 @@
+import heroStudioImg from '../assets/images/hero_it_studio_1795666959973.jpg';
+import serviceWebImg from '../assets/images/service_web_engineering_1795666960032.jpg';
+import serviceCloudImg from '../assets/images/service_cloud_infrastructure_1795666961052.jpg';
+import serviceDesignImg from '../assets/images/service_brand_ui_design_1795666960451.jpg';
+
 export type ServiceCategory = 'Web & Apps' | 'IT & Systems' | 'Design & Growth';
 
 export interface ServiceItem {
@@ -34,10 +39,12 @@ export interface DeliveryOutcome {
   summary: string;
 }
 
+export const HERO_STUDIO_IMAGE = heroStudioImg;
+
 export const COMPANY_INFO = {
   name: 'IT Expert',
   founder: 'Ramzan Nadeem',
-  logoUrl: '/assets/aistudio/ChatGPT_Image_Sep_2__2026__09_33_08_PM_d16513fb.png',
+  logoUrl: './assets/aistudio/ChatGPT_Image_Sep_2__2026__09_33_08_PM_d16513fb.png',
   fiverrHandle: 'rnitexpert',
   fiverrUrl: 'https://www.fiverr.com/rnitexpert',
   whatsappDisplay: '03288571879',
@@ -68,7 +75,7 @@ export const DEFAULT_SERVICES: ServiceItem[] = [
     startingPrice: '$120',
     turnaround: '4–7 Days',
     fiverrUrl: COMPANY_INFO.fiverrUrl,
-    image: '/src/assets/images/service_web_engineering_1795666960032.jpg',
+    image: serviceWebImg,
     imageAlt: 'Laptop displaying clean full-stack web architecture and structured TypeScript code',
     featured: true,
   },
@@ -103,7 +110,7 @@ export const DEFAULT_SERVICES: ServiceItem[] = [
     startingPrice: '$40',
     turnaround: '24 Hours',
     fiverrUrl: COMPANY_INFO.fiverrUrl,
-    image: '/src/assets/images/service_cloud_infrastructure_1795666961052.jpg',
+    image: serviceCloudImg,
     imageAlt: 'Enterprise network rack and structured cabling inside a clean data facility',
   },
   {
@@ -121,7 +128,7 @@ export const DEFAULT_SERVICES: ServiceItem[] = [
     startingPrice: '$65',
     turnaround: '2–4 Days',
     fiverrUrl: COMPANY_INFO.fiverrUrl,
-    image: '/src/assets/images/service_brand_ui_design_1795666960451.jpg',
+    image: serviceDesignImg,
     imageAlt: 'Digital tablet with UI layout grid and architectural wireframe notebook',
   },
   {

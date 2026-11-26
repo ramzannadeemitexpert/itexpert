@@ -6,6 +6,7 @@ import {
   DEFAULT_SERVICES,
   DELIVERY_OUTCOMES,
   ENGAGEMENT_TIERS,
+  HERO_STUDIO_IMAGE,
   ServiceCategory,
   ServiceItem,
 } from './data/services';
@@ -23,7 +24,13 @@ export default function App() {
       if (saved) {
         const parsed = JSON.parse(saved) as ServiceItem[];
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          return parsed.map((item) => {
+            if (item.image?.startsWith('/src/assets/')) {
+              const fallback = DEFAULT_SERVICES.find((d) => d.id === item.id);
+              return { ...item, image: fallback?.image ?? `.${item.image}` };
+            }
+            return item;
+          });
         }
       }
     } catch {
@@ -207,7 +214,7 @@ export default function App() {
               <div className="lg:col-span-6">
                 <div className="h-full min-h-[280px] lg:min-h-[420px] rounded-xl border border-slate-200 overflow-hidden bg-slate-100">
                   <ResilientImage
-                    src="/src/assets/images/hero_it_studio_1795666959973.jpg"
+                    src={HERO_STUDIO_IMAGE}
                     alt="IT Expert engineering studio workstation displaying system schematics"
                     titleFallback="IT Expert Engineering Studio"
                     className="w-full h-full object-cover"
